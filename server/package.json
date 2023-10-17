@@ -1,5 +1,5 @@
 {
-  "name": "splitapp",
+  "name": "server",
   "version": "1.0.0",
   "description": "This is a group money spliting app made with MERN stack ",
   "main": "app.js",
@@ -23,7 +23,6 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.3.8",
     "morgan": "~1.9.1",
     "winston": "^3.7.2"
   },
