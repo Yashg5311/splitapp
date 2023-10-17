@@ -4,9 +4,8 @@
   "description": "This is a group money spliting app made with MERN stack ",
   "main": "app.js",
   "scripts": {
-    "build": "cd server && npm install  && cd ../client && npm install && npm run build",
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx nodemon app.js",
+    "start": "node app.js"
   },
   "keywords": [
     "SplitWise"
