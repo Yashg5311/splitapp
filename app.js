@@ -21,12 +21,24 @@ app.use('/api/users', usersRouter)
 app.use('/api/group', apiAuth.validateToken,gorupRouter)
 app.use('/api/expense', apiAuth.validateToken,expenseRouter)
 
-if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
-    app.use(express.static('client/build'));
-    app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname,'client','build','index.html'));
-    });
-   }
+//if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
+ //   app.use(express.static('client/build'));
+ //   app.get('*', (req, res) => {
+  //  res.sendFile(path.resolve(__dirname,'client','build','index.html'));
+  //  });
+  // }
+
+
+  // deployment config
+//const path = require("path");
+__dirname = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/client/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
+}
 
 //To detect and log invalid api hits 
 app.all('*', (req, res) => {
